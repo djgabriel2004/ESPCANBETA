@@ -39,11 +39,20 @@
     color:var(--muted);
   }
   header.top{
-    display:flex; align-items:center; justify-content:space-between;
-    padding:22px 0 8px; gap:12px; flex-wrap:wrap;
+    display:flex; flex-direction:column; align-items:center;
+    padding:30px 0 8px; gap:14px;
   }
-  .wordmark{font-size:15px; font-weight:800; letter-spacing:.22em; text-transform:uppercase}
-  .wordmark b{color:var(--accent)}
+  .wordmark{
+    font-size:clamp(30px,6vw,44px); font-weight:800; font-style:italic;
+    letter-spacing:.14em; text-transform:uppercase; line-height:1;
+  }
+  .wordmark .wm-speed{
+    background:linear-gradient(90deg,#9B4FC0,#C93C74,#E8384F);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .wordmark .wm-bx{
+    color:transparent; -webkit-text-stroke:1.5px #E8384F;
+  }
   .units-chip{
     font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
     border:1px solid var(--accent); color:var(--accent);
@@ -65,7 +74,7 @@
   .btn{
     display:inline-block; border:0; cursor:pointer; text-decoration:none;
     font:inherit; font-weight:800; letter-spacing:.02em;
-    background:var(--accent-fill); color:var(--accent-ink);
+    background:linear-gradient(90deg,#8E4CB0,#D8354E); color:#FFFFFF;
     padding:13px 24px; border-radius:10px;
   }
   .btn:hover{filter:brightness(1.06)}
@@ -108,7 +117,7 @@
   }
   .price-card.deal{border:2px solid var(--accent-fill); box-shadow:var(--shadow); position:relative}
   .deal-tag{
-    position:absolute; top:-12px; left:20px; background:var(--accent-fill); color:var(--accent-ink);
+    position:absolute; top:-12px; left:20px; background:linear-gradient(90deg,#8E4CB0,#D8354E); color:#FFFFFF;
     font-size:11px; font-weight:800; letter-spacing:.12em; text-transform:uppercase;
     padding:4px 10px; border-radius:999px;
   }
@@ -144,7 +153,7 @@
 
 <div class="wrap">
   <header class="top">
-    <div class="wordmark">Speed<b>BX</b></div>
+    <div class="wordmark" role="img" aria-label="SpeedBX"><span class="wm-speed">Speed</span><span class="wm-bx">BX</span></div>
     <div class="units-chip">First 10 units — $549</div>
   </header>
 
